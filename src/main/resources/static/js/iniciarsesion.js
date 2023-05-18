@@ -118,7 +118,7 @@ fetch(`/api/login/?email=${trimEmail}&contrasena=${trimPassword}`, requestOption
             </div>
           </div>`;
           
-          //window.location.replace("../perfil.html");
+          window.location.replace("../perfil.html");
            setTimeout(() => { }, 4000);
     }
             });
