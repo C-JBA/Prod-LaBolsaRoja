@@ -102,7 +102,7 @@ var requestOptions = {
             redBorder(password);
             
         }else{
-fetch(`/login/?email=${trimEmail}&contrasena=${trimPassword}`, requestOptions)
+fetch(`/api/login/?email=${trimEmail}&contrasena=${trimPassword}`, requestOptions)
   .then(response => {response.json();
 		     if (!response.ok) {
               throw new Error('Error en la respuesta del servidor');
