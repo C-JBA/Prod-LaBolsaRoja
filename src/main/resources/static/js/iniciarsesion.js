@@ -104,10 +104,16 @@ var requestOptions = {
         }else{
 fetch(`/login/?email=${trimEmail}&contrasena=${trimPassword}`, requestOptions)
   .then(response => {response.json();
-		     console.log("response:"+response);
-		     if(typeof(response) != JSON) response = null;
+		     if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error('Error en la respuesta del servidor');
+                }
+		     
 		    })
-  .then(result => {console.log("result"+result);
+  .then(result => {
+	
+	console.log("result"+result);
   localStorage.setItem("UsuarioActivo", JSON.stringify(result));
   if (result!=null){
 	    greenBorder(email);
