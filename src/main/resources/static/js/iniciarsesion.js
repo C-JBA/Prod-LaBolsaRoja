@@ -104,12 +104,9 @@ var requestOptions = {
         }else{
 fetch(`/login/?email=${trimEmail}&contrasena=${trimPassword}`, requestOptions)
   .then(response => {response.json();
-		     if (response.ok) {
-                    return response.json();
-                } else {
-                    throw new Error('Error en la respuesta del servidor');
-                }
-		     
+		     if (!response.ok) {
+              throw new Error('Error en la respuesta del servidor');
+                } 		     
 		    })
   .then(result => {
 	
