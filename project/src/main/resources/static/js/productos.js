@@ -24,7 +24,7 @@ function agregarAlCarrito(idk) {
 localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
-
+let im;
 if (localStorage.getItem("productos") == null && cardGroup[0].childElementCount === 0) {
 fetch('http://127.0.0.1:8080/api/producto/',{method:'GET'})
     .then(response => response.json())
@@ -34,7 +34,7 @@ fetch('http://127.0.0.1:8080/api/producto/',{method:'GET'})
      localStorage.setItem("productos", JSON.stringify(data));
       productos = data;
       productos.forEach((element,index) => {
-		let im=src+element.img;
+		im=src+element.img;
         let html =
           `<div class="col ">
                     <div class="card h-350 ">
@@ -85,8 +85,10 @@ fetch('http://127.0.0.1:8080/api/producto/',{method:'GET'})
       console.error('Error al leer el archivo JSON:', error);
     });
 } else {
+
   productos = JSON.parse(localStorage.getItem("productos"));
   productos.forEach((element,index) => {
+	  im=src+element.img;
     let html =
       `<div class="col ">
                     <div class="card h-350 ">

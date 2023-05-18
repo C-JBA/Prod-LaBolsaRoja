@@ -10,6 +10,7 @@ let Tabla = document.getElementById("Inventario");
 let imgBase64 = "";
 let inventario;
 let id = 0;
+let src=`/src/productos_prueba/`;
 
 let fileImage = document.getElementById('fileImage');
 let btnFake = document.getElementById('btnFake');
@@ -38,7 +39,7 @@ function chargeFile(inputFile) {
 }
 
 if (localStorage.getItem("productos") == null) {
-    fetch('./js/productos.json')
+fetch('http://127.0.0.1:8080/api/producto/',{method:'GET'})
         .then(response => response.json())
         .then(data => {
             inventario = data;
@@ -60,14 +61,16 @@ function actualizarTabla() {
         Tabla.removeChild(Tabla.firstChild);
     }
 
-    inventario.forEach((element, index) => {
+    inventario.forEach(element => {
+		let im=src+element.img;
+		console.log(element.idProducto)
         let html = `
         <tr>
                   <td>${element.id}</td>
-                  <td><img  src=${element.image} width="100 px" height="75 px"></td>
-                  <td>${element.title}</td>
-                  <td>${element.description}</td>
-                  <td>${element.price}</td>
+                  <td><img  src=${im} width="100 px" height="75 px"></td>
+                  <td>${element.nombre}</td>
+                  <td>${element.descripcion}</td>
+                  <td>${element.precio}</td>
                   <td>${element.inventary}</td>
                   <td><button type="button" onclick="quitarProducto(${element.id})" class="btn btn-danger">Quitar</button></td>
                 </tr>        
@@ -154,9 +157,46 @@ function borderTimeout() {
 
 function agregarProducto(title, price, description, image) {
 
+
+
     if (title !== "" && price !== "") {
+		var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+
+var raw = JSON.stringify({
+  "nombre": title,
+       "largo": 10,
+        "ancho": 10,
+        "fuelle": 11,
+  "descripcion": description,
+  "precio": price,
+  "img": image
+  
+});
+
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("http://127.0.0.1:8080/api/producto/", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+//		var requestOptions = {
+//  method: 'POST',
+//  redirect: 'follow'
+//};
+//
+//fetch(`http://127.0.0.1:8080/api/productos/?nombre=${title}&precio=${price}&descripcion=${description}&img=${image}`, requestOptions)
+//  .then(response => response.text())
+//  .then(result => console.log(result))
+//  .catch(error => console.log('error', error));
+
         id = inventario.length + 1;
-        inventario.push({ id: id, title: title, price: price, description: description, image: image });
+        inventario.push({ id: id, title: title, price: price, description: description, image: image});
         localStorage.setItem("productos", JSON.stringify(inventario));
         document.getElementById("name").value = "";
         document.getElementById("price").value = "";
