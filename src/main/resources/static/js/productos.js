@@ -26,7 +26,7 @@ localStorage.setItem("carrito", JSON.stringify(carrito));
 
 let im;
 if (localStorage.getItem("productos") == null && cardGroup[0].childElementCount === 0) {
-fetch('http://127.0.0.1:8080/api/producto/',{method:'GET'})
+fetch('/api/producto/',{method:'GET'})
     .then(response => response.json())
     .then(data => {
 		
