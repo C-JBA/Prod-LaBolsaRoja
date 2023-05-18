@@ -170,7 +170,7 @@ var raw = JSON.stringify({
         "fuelle": 11,
   "descripcion": description,
   "precio": price,
-  "img": image
+  "img": "bolsaRojaPeq.jpg"
   
 });
 
