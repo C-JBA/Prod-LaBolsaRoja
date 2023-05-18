@@ -105,6 +105,7 @@ var requestOptions = {
 fetch(`/login/?email=${trimEmail}&contrasena=${trimPassword}`, requestOptions)
   .then(response => {response.json();
 		     console.log("response:"+response);
+		     if(typeof(response) != JSON) response = null;
 		    })
   .then(result => {console.log("result"+result);
   localStorage.setItem("UsuarioActivo", JSON.stringify(result));
