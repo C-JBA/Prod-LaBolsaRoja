@@ -121,7 +121,12 @@ fetch(`/api/login/?email=${trimEmail}&contrasena=${trimPassword}`, requestOption
           window.location.replace("../perfil.html");
            setTimeout(() => { }, 4000);
     }
-            });
+            }).catch(error => {console.log('error', error)
+  
+            redBorder(email);
+         redBorder(password);
+         parrafo.innerHTML = "Usuario y/o contraseña incorrectas.<br> Intente Nuevamente.";
+});
             })
   .catch(error => {console.log('error', error)
   
