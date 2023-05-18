@@ -1,0 +1,9 @@
+.card-img-top {
+    width: 200px; /* Tamaño deseado de la imagen */
+    height: 200px;
+    margin: 0 auto; /* Centrar horizontalmente la imagen */
+  }
+  .card{
+    border-color: rgba(0, 0, 0, 0);
+  }
+

@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+/*NAVEGACIÓN------------------------------------------------------------------------------*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+header{
+    background: #ffffff;
+    padding: 20px;
+    width: 100%;
+    height: 80px;
+    margin-top: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.container__menu{
+    max-width: 1200px;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logo img{
+    width: 160px;
+
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+}
+
+.menu ul{
+    display: flex;
+}
+
+.menu ul li{
+    list-style: none;
+    margin-left: 36px;
+}
+
+.menu ul li a{
+    text-decoration: none;
+    font-size: 16px;
+    color: #000000;
+    text-transform: uppercase;
+}
+
+#selected{
+    background: rgb(191, 64, 17);
+    color: #fff;
+    padding: 10px 40px;
+    border-radius: 50px;
+}
+
+.menu nav img{
+    display: none;
+}
+
+.menu #btn_menu{
+    display: none;
+}
+
+/* Navbar móvil*/
+.barra-nav {
+    display: none;
+  }
+  
+  @media screen and (max-width: 767px) {
+    .barra-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      height: 50px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+    }
+  
+    .barra-nav a {
+      color: black;
+      font-size: 24px;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  
+    .barra-nav a:hover {
+      color: #A82112;
+    }
+  
+    .barra-nav a:first-child {
+      margin-left: 2;
+    }
+  
+    .barra-nav a:last-child {
+      margin-right: 2;
+    }
+  
+    .barra-nav .perfil {
+      margin: 0 auto;
+    }
+  }

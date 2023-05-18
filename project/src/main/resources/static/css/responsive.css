@@ -1,0 +1,120 @@
+/*Haciendo la página Responsive---------------------------------------------------------------------------------------*/
+@media screen and (max-width: 767px) {
+    .barra-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: white;
+      height: 50px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+    }s
+  
+    .barra-nav a {
+      color: black;
+      font-size: 24px;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  
+    .barra-nav a:hover {
+      color: rgb(191, 64, 17);
+    }
+  
+    .barra-nav a:first-child {
+      margin-left: 2;
+    }
+  
+    .barra-nav a:last-child {
+      margin-right: 2;
+    }
+  
+    .barra-nav .perfil {
+      margin: 0 auto;
+    }
+  }
+  
+  
+  @media screen and (max-width:1200px){
+  
+    header{
+        padding: 40px;
+    }
+  
+  }
+  
+  @media screen and (max-width: 720px){
+  
+    .menu nav{
+        position: fixed;
+        top: 0;
+        right: -250px;
+        background: white;
+        width: 250px;
+        height: 100vh;
+        padding: 40px;
+        z-index: 1;
+        transition: all 300ms;
+    }
+  
+    .menu ul{
+        flex-direction: column;
+        margin-top: 40px;
+    }
+  
+    .menu ul li{
+        margin-top: 30px;
+        margin-left: 0;
+    }
+  
+    .menu ul li a{
+        color: #bebebe;
+    }
+  
+    #selected{
+        background: none;
+        padding: 0px;
+        border-radius: none;
+        color: rgb(191, 64, 17);
+    }
+  
+    .menu nav img{
+        display: block;
+        width: 60px;
+    }
+  
+    #back_menu{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0,0,0,0.5);
+        display: none;
+    }
+  
+    .menu #btn_menu{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        background: rgb(191, 64, 17);
+        font-size: 24px;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 300ms;
+    }
+  
+    .menu #btn_menu:hover{
+        background: rgba(255, 255, 255, 0.2);
+    }
+  }
+  
+  body {
+    position: relative;
+    min-height: 100vh;
+  }

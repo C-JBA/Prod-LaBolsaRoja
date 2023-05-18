@@ -1,0 +1,42 @@
+.container-form-inv{
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    border-radius: 50px;
+    border-style: solid;
+    border-color: rgb(191, 64, 17);  
+  }
+  .p {
+    text-align: center;
+    margin-top: 50px;
+  }
+ #texto-maquina {
+  overflow: hidden;
+  border-right: .05em solid rgba(0, 0, 0, 0); /* Cambia el color del cursor a negro */
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  animation:
+    escribir 3.5s steps(40, end) forwards;
+}
+
+@keyframes escribir {
+  from { width: 0; }
+  to { width: 90%; }
+}
+
+@keyframes parpadeo-cursor {
+  from, to { border-color: transparent; }
+  50% { border-color: black; } /* Cambia el color del cursor a negro */
+}
+
+@media (max-width: 768px) {
+    .container-form-inv {
+      overflow-x: auto;
+    }
+  }
+  

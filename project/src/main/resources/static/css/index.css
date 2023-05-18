@@ -1,0 +1,113 @@
+.text {
+  max-width: 80%;
+  margin: 0 auto; /* Para centrar el texto horizontalmente */
+}
+
+.container__cover .text h1{
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.container__cover .text p{
+  font-size: 18px;
+  margin-top: 40px;
+}
+
+.container__cover .text input{
+  padding: 18px 80px;
+  border: none;
+  font-size: 16px;
+  border-radius: 50px;
+  margin-top: 40px;
+  background-color: rgb(191, 64, 17);
+  /*Degradado*/
+  /*background: linear-gradient(to right, #fab2b2,rgb(191, 64, 17));*/
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 1px 1px 30px -12px rgb(191, 64, 17);
+  transition: all 300ms;
+}
+
+.container__cover .text input:hover{
+  box-shadow: 1px 1px 30px -6px rgb(191, 64, 17);
+}
+
+
+.container__cover .svg img{
+  width: 500px;
+  animation: move-vector 4s linear infinite;
+}
+
+@keyframes move-vector {
+  0%{
+      transform: translateY(15px);
+  }50%{
+      transform: translateY(0px);
+  }100%{
+      transform: translateY(15px);
+  }
+}
+/*Redomendados(al final el código para las estrellas color rojo
+
+.img-fluid {
+  max-width: 50%;
+}
+
+.container-fluid {
+  text-align: center;
+}
+
+.product-item {
+  max-width: 200px;
+}
+<i class="fa-solid fa-star" style="color: #bf4011;"></i>*/
+
+/*Bolsin responsivo*/
+@media only screen and (max-width: 767px) {
+    .svg img {
+      max-width: 50%;
+      height: auto;
+      text-align: center;
+    }
+  }
+  .container__cover {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .cover {
+    width: 100%;
+  }
+  
+  .text {
+    text-align: center;
+  }
+  
+  .svg {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .container__cover {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      text-align: initial;
+    }
+    
+    .cover {
+      width: 50%;
+    }
+    
+    .text {
+      text-align: center;
+    }
+    
+    .svg {
+      width: 50%;
+      margin-bottom: 0;
+    }
+  }

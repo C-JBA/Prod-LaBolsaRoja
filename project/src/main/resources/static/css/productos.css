@@ -1,0 +1,33 @@
+.container-cards{
+    border-radius: 20px;
+}
+
+.card-image{
+    height: 20rem;
+    width: 14rem;
+    margin: 0 auto;
+    margin-top: 1rem;
+    border-radius: 10px;
+}
+
+.cards-div  {
+    justify-content: center;
+}
+
+@media (max-width: 400px){
+    .card-image{
+        /* height: 20rem;
+        width: 14rem; */
+        margin: 0 auto;
+        margin-top: 1rem;
+    }
+}
+
+@media (min-width: 800px){
+    .card-image{
+        height: 17rem;
+        width: 11rem;
+        margin: 0 auto;
+        margin-top: 1rem;
+    }
+}
