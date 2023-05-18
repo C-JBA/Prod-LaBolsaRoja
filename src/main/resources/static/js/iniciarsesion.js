@@ -103,8 +103,10 @@ var requestOptions = {
             
         }else{
 fetch(`/login/?email=${trimEmail}&contrasena=${trimPassword}`, requestOptions)
-  .then(response => response.json())
-  .then(result => {console.log(result);
+  .then(response => {response.json();
+		     console.log("response:"+response);
+		    })
+  .then(result => {console.log("result"+result);
   localStorage.setItem("UsuarioActivo", JSON.stringify(result));
   if (result!=null){
 	    greenBorder(email);
@@ -117,7 +119,7 @@ fetch(`/login/?email=${trimEmail}&contrasena=${trimPassword}`, requestOptions)
           </div>
         </div>`;
         
-        window.location.replace("../perfil.html");
+        //window.location.replace("../perfil.html");
          setTimeout(() => { }, 4000);
   }
   
