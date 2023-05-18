@@ -7,6 +7,9 @@ const btn = document.getElementById("button");
 const parrafo = document.getElementById("warnings");
 
 
+
+
+
 if (localStorage.getItem("Users") == null ) {
     let user=[{"id":0,
     "name":"test",
@@ -107,10 +110,29 @@ btn.addEventListener("click", e => {
     if (enviar) {
         parrafo.innerHTML = warnings;
     } else {
-        idGlobal =user.length;
-        user.push({id:idGlobal,name:trimName, mail: trimEmail, telefon:trimTelef, pass: trimPassword2});
-        localStorage.setItem("Users",JSON.stringify(user));
-        localStorage.setItem("UsuarioActivo",JSON.stringify({id:idGlobal,name:trimName, mail: trimEmail, telefon:trimTelef, pass: trimPassword2}));
+		
+		var myHeaders = new Headers();
+myHeaders.append("Authorization", "Bearer: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJudWV2b0BhZGlzLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjg0MTc2ODQyLCJleHAiOjE2ODQyMTI4NDJ9.ZJisp3Dx3PfCAh8noDWPlWDzQ1zBMt8F65LcAIpH2ao");
+myHeaders.append("Content-Type", "application/json");
+
+var raw = JSON.stringify({
+  "nombre": trimName,
+  "email": trimEmail,
+  "telefono": trimTelef,
+  "contrasena": trimPassword
+});
+
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("http://127.0.0.1:8080/api/usuario/", requestOptions)
+  .then(response => response.json())
+  .then(result => {console.log(result)
+  localStorage.setItem("UsuarioActivo",JSON.stringify({idUsuarios:result.id,nombre:result.nombre, email: result.email, telefono:result.telefono, contrasena: result.contrasena}));
         parrafo.innerHTML =
         `<div  class="alert alert-success d-flex align-items-center" role="alert">
         <svg  height="2rem"width="2rem" class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
@@ -122,6 +144,12 @@ btn.addEventListener("click", e => {
         window.location.replace("../perfil.html");
         
      },2500);
+  
+  })
+  .catch(error => console.log('error', error));
+		
+		
+        
      
     }
     

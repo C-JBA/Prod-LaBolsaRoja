@@ -4,6 +4,7 @@ let contain = document.getElementById("contain");
 const parrafo = document.getElementById("warnings");
 let id = 0;
 let carrito;
+let src=`/src/productos_prueba/`;
 carrito = JSON.parse(localStorage.getItem("carrito"));
 
 if (carrito == undefined) {
@@ -46,8 +47,8 @@ btnPagar.addEventListener("click", e => {
         let tot=0;
         let pedidoDetails = "";
         carrito.forEach((producto, index) => {
-            tot+=producto.price;
-            pedidoDetails += `<li>${index + 1}. ${producto.title} - ${producto.inventary} x $${producto.price} = $${producto.inventary * producto.price}</li>`;
+            tot+=producto.precio;
+            pedidoDetails += `<li>${index + 1}. ${producto.nombre} - ${producto.inventary} x $${producto.precio} = $${producto.inventary * producto.precio}</li>`;
         });
 
         let ebodyCliente = `
@@ -108,18 +109,19 @@ function actualizarTabla() {
     }
     let total = 0;
     carrito.forEach((element, index) => {
-        let subtotal = element.inventary * element.price;
+		im=src+element.img;
+        let subtotal = element.inventary * element.precio;
         total += subtotal;
         let html = `
         <div class="row">
         <div class="col">
-                   <img  src=${element.image} width="100 px" height="75 px">
+                   <img  src=${im} width="100 px" height="75 px">
                    </div>
                   <div class="col">
-                  <td><strong>${element.title}</strong></td>
+                  <td><strong>${element.nombre}</strong></td>
                   </div>
                   <div class="col">
-                  <td>${element.price} MXN c/u </td>
+                  <td>${element.precio} MXN c/u </td>
                   </div>
                   <div class="col">
                   <td>Pzas: ${element.inventary} </td>

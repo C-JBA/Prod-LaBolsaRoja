@@ -6,10 +6,10 @@ let src=`/src/productos_prueba/`;
 function agregarAlCarrito(idk) {
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-  let id = productos[idk].id - 1;
-  let title = productos[idk].title;
-  let price = productos[idk].price;
-  let image = productos[id].image;
+  let id = productos[idk].id-1;
+  let title = productos[idk].nombre;
+  let price = productos[idk].precio;
+  let image = productos[id].img;
   let cantidad = Math.round(document.getElementById(`cantidad${idk}`).value);
 
   // Verificar si el producto ya existe en el carrito
@@ -18,7 +18,7 @@ function agregarAlCarrito(idk) {
     productoExistente.inventary = parseInt(productoExistente.inventary) + parseInt(cantidad);
   } else {
     // Agregar el nuevo producto al carrito
-    carrito.push({ id: id, title: title, price: price, inventary: cantidad, image: image });
+    carrito.push({ id: id, nombre: title, precio: price, inventary: cantidad, img: image });
   }
 
 localStorage.setItem("carrito", JSON.stringify(carrito));
