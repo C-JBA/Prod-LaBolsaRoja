@@ -29,18 +29,25 @@ btn3.addEventListener("click", e => {
     parrafo2.innerHTML = "";
     let trimEmail2 = email2.value.trim();
 
-    user.forEach(element => {
-        let correo = element.mail;
-        let name = element.name;
-        let id = element.id;
-        let telefon = element.telefon;
-        let Mensaje = `
-            <br>
-            <p>Instrucciones de recuperacion de contraseña</p>
-            <br>
-            `
-        if (correo == trimEmail2) {
-            console.log("Hola");
+
+
+fetch(`/api/login/?email=${trimEmail2}`, requestOptions)
+  .then(function(response){response.json().then(function (json){
+	  
+let usuario=JSON.stringify(json);
+console.log("Hola");
+let correo = usuario.email;
+let name = usuario.nombre;
+let id = usuario.idUsuarios;
+let telefon = usuario.telefono;
+let Mensaje = `
+      <br>
+      <p>Instrucciones de recuperacion de contraseña</p>
+     <br>
+      `;     
+	              
+	              
+	              
             parrafo2.innerHTML =
                 `<div  class="alert alert-success d-flex align-items-center" role="alert">
                 <svg  height="2rem"width="2rem" class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
@@ -73,11 +80,28 @@ btn3.addEventListener("click", e => {
                     Mensaje enviado correctamente.
                 </div>
              </div>`;
-        } else {
-            warnings2 += `- Email no registrado.<br>`;
+        
+
+
+ }).catch(error => {console.log('error', error)
+              warnings2 += `- Email no registrado.<br>`;
             parrafo2.innerHTML = warnings2;
-        }
-    });
+
+});
+            })
+  .catch(error => {console.log('error', error)
+              warnings2 += `- Email no registrado.<br>`;
+            parrafo2.innerHTML = warnings2;
+
+  });
+
+
+
+
+
+
+
+
 
     borderTimeout2();
 });
@@ -102,30 +126,32 @@ var requestOptions = {
             redBorder(password);
             
         }else{
-fetch(`http://127.0.0.1:8080/api/login/?email=${trimEmail}&contrasena=${trimPassword}`, requestOptions)
-  .then(response => response.json())
-  .then(result => {console.log(result);
-  localStorage.setItem("UsuarioActivo", JSON.stringify(result));
-  if (result!=null){
-	    greenBorder(email);
-       greenBorder(password);
-       parrafo.innerHTML =
-                `<div  class="alert alert-success d-flex agn-items-center" role="alert">
-            <svg  height="2rem"width="2rem" class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:hf="#check-circle-fill"/></svg>
-           <div>
-                Inicio de on exitoso. Redirigiendo (...)
-          </div>
-        </div>`;
-        
-        window.location.replace("../perfil.html");
-         setTimeout(() => { }, 4000);
-  }
-  
-   
+fetch(`/api/login/?email=${trimEmail}&contrasena=${trimPassword}`, requestOptions)
+  .then(function(response){response.json().then(function (json){
 	  
-  }
-
-  )
+    console.log("result"+json);
+    localStorage.setItem("UsuarioActivo", JSON.stringify(json));
+    if (json!=null){
+          greenBorder(email);
+         greenBorder(password);
+         parrafo.innerHTML =
+                  `<div  class="alert alert-success d-flex agn-items-center" role="alert">
+              <svg  height="2rem"width="2rem" class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:hf="#check-circle-fill"/></svg>
+             <div>
+                  Inicio de on exitoso. Redirigiendo (...)
+            </div>
+          </div>`;
+          
+          window.location.replace("../perfil.html");
+           setTimeout(() => { }, 4000);
+    }
+            }).catch(error => {console.log('error', error)
+  
+            redBorder(email);
+         redBorder(password);
+         parrafo.innerHTML = "Usuario y/o contraseña incorrectas.<br> Intente Nuevamente.";
+});
+            })
   .catch(error => {console.log('error', error)
   
    			redBorder(email);

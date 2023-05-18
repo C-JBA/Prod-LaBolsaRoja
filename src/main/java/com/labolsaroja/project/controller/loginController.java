@@ -47,4 +47,22 @@ public Usuario loginUsuario(@RequestParam String email ,@RequestParam String con
 }//loginUsuario
 
 
+@PostMapping
+public Usuario passwordReset(@RequestParam String email) {
+	
+	Optional<Usuario> userByEmail=
+			usuarioRepository.findByEmail(email);
+	if (userByEmail.isPresent()) {
+		Usuario user=userByEmail.get();
+		
+			if(user.getEmail().equals(email)){ 
+			return user;
+			}
+	}//if isPresent
+	return null;
+	
+}//passwordReset
+
+
+
 }

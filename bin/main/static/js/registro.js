@@ -129,7 +129,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("http://127.0.0.1:8080/api/usuario/", requestOptions)
+fetch("/api/usuario/", requestOptions)
   .then(response => response.json())
   .then(result => {console.log(result)
   localStorage.setItem("UsuarioActivo",JSON.stringify({idUsuarios:result.id,nombre:result.nombre, email: result.email, telefono:result.telefono, contrasena: result.contrasena}));

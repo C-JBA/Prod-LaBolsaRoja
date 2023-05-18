@@ -38,7 +38,7 @@ function chargeFile(inputFile) {
 }
 
 if (localStorage.getItem("productos") == null) {
-fetch('http://127.0.0.1:8080/api/producto/',{method:'GET'})
+fetch('/api/producto/',{method:'GET'})
         .then(response => response.json())
         .then(data => {
             inventario = data;
@@ -180,12 +180,12 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("http://127.0.0.1:8080/api/producto/", requestOptions)
+fetch("/api/producto/", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
   
-  fetch('http://127.0.0.1:8080/api/producto/',{method:'GET'})
+  fetch('/api/producto/',{method:'GET'})
         .then(response => response.json())
         .then(data => {
             inventario = data;

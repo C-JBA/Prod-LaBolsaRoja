@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.labolsaroja.project.model.ChangePassword;
@@ -93,6 +94,22 @@ usuarioRepository.deleteById(id);;
 		return null;
 	}//validateUsuario
 
+
+	public Usuario passwordReset(String email) {
+		
+		Optional<Usuario> userByEmail=
+				usuarioRepository.findByEmail(email);
+		if (userByEmail.isPresent()) {
+			Usuario user=userByEmail.get();
+			
+				if(user.getEmail().equals(email)){ 
+				return user;
+				}
+		}//if isPresent
+		return null;
+		
+	}//passwordReset
+	
 
 
 
