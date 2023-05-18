@@ -102,7 +102,7 @@ var requestOptions = {
             redBorder(password);
             
         }else{
-fetch(`http://127.0.0.1:8080/api/login/?email=${trimEmail}&contrasena=${trimPassword}`, requestOptions)
+fetch(`/login/?email=${trimEmail}&contrasena=${trimPassword}`, requestOptions)
   .then(response => response.json())
   .then(result => {console.log(result);
   localStorage.setItem("UsuarioActivo", JSON.stringify(result));
