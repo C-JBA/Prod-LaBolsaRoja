@@ -103,37 +103,26 @@ var requestOptions = {
             
         }else{
 fetch(`/api/login/?email=${trimEmail}&contrasena=${trimPassword}`, requestOptions)
-  .then(response => {response.json();
-// 		      if (response.ok) {
-//                     return response.json();
-//                 } else {
-//                     throw new Error('Error en la respuesta del servidor');
-//                 }	     
-		    })
-  .then(result => {
-	
-	console.log("result"+result);
-  localStorage.setItem("UsuarioActivo", JSON.stringify(result));
-  if (result!=null){
-	    greenBorder(email);
-       greenBorder(password);
-       parrafo.innerHTML =
-                `<div  class="alert alert-success d-flex agn-items-center" role="alert">
-            <svg  height="2rem"width="2rem" class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:hf="#check-circle-fill"/></svg>
-           <div>
-                Inicio de on exitoso. Redirigiendo (...)
-          </div>
-        </div>`;
-        
-        //window.location.replace("../perfil.html");
-         setTimeout(() => { }, 4000);
-  }
-  
-   
+  .then(function(response){response.json().then(function (json){
 	  
-  }
-
-  )
+    console.log("result"+json);
+    localStorage.setItem("UsuarioActivo", JSON.stringify(json));
+    if (json!=null){
+          greenBorder(email);
+         greenBorder(password);
+         parrafo.innerHTML =
+                  `<div  class="alert alert-success d-flex agn-items-center" role="alert">
+              <svg  height="2rem"width="2rem" class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:hf="#check-circle-fill"/></svg>
+             <div>
+                  Inicio de on exitoso. Redirigiendo (...)
+            </div>
+          </div>`;
+          
+          //window.location.replace("../perfil.html");
+           setTimeout(() => { }, 4000);
+    }
+            });
+            })
   .catch(error => {console.log('error', error)
   
    			redBorder(email);
