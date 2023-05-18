@@ -9,13 +9,10 @@ const btn3 = document.getElementById("button3");
 const parrafo = document.getElementById("warnings");
 const parrafo2 = document.getElementById("warningsRecuperar");
 
+fetch
 
 if (localStorage.getItem("Users") == null) {
-    let user=[{"id":0,
-    "name":"test",
-    "mail":"test@test.test",
-    "telefon":"5512345678",
-    "pass":"T35T"}];
+
     localStorage.setItem("Users", JSON.stringify(user));
 }
 user = JSON.parse(localStorage.getItem("Users"));
@@ -92,46 +89,52 @@ btn1.addEventListener("click", e => {
     let trimPassword = password.value.trim();
 
 
-    user.forEach(element => {
-        let correo = element.mail;
-        let contrasena = element.pass;
-       
-        if (correo == trimEmail && contrasena == trimPassword) {
+var raw = "";
 
-            if (localStorage.getItem("UsuarioActivo") != null) {
-                localStorage.removeItem("UsuarioActivo");
-            }
-            greenBorder(email);
-            greenBorder(password);
-            parrafo.innerHTML =
-                `<div  class="alert alert-success d-flex align-items-center" role="alert">
-            <svg  height="2rem"width="2rem" class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
-            <div>
-                Inicio de sesion exitoso. Redirigiendo (...)
-            </div>
-         </div>`;
-         if (localStorage.getItem("UsuarioActivo") == null) {
-            localStorage.setItem("UsuarioActivo", JSON.stringify(element));
-            usuarioActivo = JSON.parse(localStorage.getItem("UsuarioActivo"));
-            window.location.replace("../perfil.html");
-        }
-        setTimeout(() => { }, 4000);
-        }else{
-            redBorder(email);
-            redBorder(password);
-            parrafo.innerHTML = "Usuario y/o contraseña incorrectas.<br> Intente Nuevamente.";
-        }
-
-        if(trimEmail=="" || trimPassword==""){
+var requestOptions = {
+  method: 'POST',
+  body: raw,
+  redirect: 'follow'
+};
+  if(trimEmail=="" || trimPassword==""){
             parrafo.innerHTML ="Ingresa Usuario y contraseña.";
             redBorder(email);
             redBorder(password);
             
-        }
+        }else{
+fetch(`http://127.0.0.1:8080/api/login/?email=${trimEmail}&contrasena=${trimPassword}`, requestOptions)
+  .then(response => response.json())
+  .then(result => {console.log(result);
+  localStorage.setItem("UsuarioActivo", JSON.stringify(result));
+  if (result!=null){
+	    greenBorder(email);
+       greenBorder(password);
+       parrafo.innerHTML =
+                `<div  class="alert alert-success d-flex agn-items-center" role="alert">
+            <svg  height="2rem"width="2rem" class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:hf="#check-circle-fill"/></svg>
+           <div>
+                Inicio de on exitoso. Redirigiendo (...)
+          </div>
+        </div>`;
+        
+        window.location.replace("../perfil.html");
+         setTimeout(() => { }, 4000);
+  }
+  
+   
+	  
+  }
 
-    });
+  )
+  .catch(error => {console.log('error', error)
+  
+   			redBorder(email);
+            redBorder(password);
+            parrafo.innerHTML = "Usuario y/o contraseña incorrectas.<br> Intente Nuevamente.";
+  });
+  }
+  borderTimeout();
 
-    borderTimeout();
 });
 
 function borderTimeout() {

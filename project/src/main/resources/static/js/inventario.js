@@ -32,7 +32,6 @@ function chargeFile(inputFile) {
         reader.readAsDataURL(file);
         reader.onload = function (e) {
             imgBase64 = e.target.result;
-            console.log(imgBase64);
             parrafo.innerHTML = "Imagen cargada correctamente";
         }
     }// file
@@ -104,7 +103,7 @@ btnEnviar.addEventListener("click", e => {
     let trimDescription = descripcion.value.trim();
     let trimPrice = precio.value.trim();
     let trimImage = imgBase64;
-    console.log(imgBase64);
+
 
     if (trimName.length <= 2) {
         warnings += `El nombre no es válido <br>`;
@@ -185,6 +184,19 @@ fetch("http://127.0.0.1:8080/api/producto/", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
+  
+  fetch('http://127.0.0.1:8080/api/producto/',{method:'GET'})
+        .then(response => response.json())
+        .then(data => {
+            inventario = data;
+            localStorage.getItem("inventario",inventario);
+            actualizarTabla();
+        })
+        .catch(error => {
+            console.error('Error al leer el archivo JSON:', error);
+        });
+  
+  
 //		var requestOptions = {
 //  method: 'POST',
 //  redirect: 'follow'

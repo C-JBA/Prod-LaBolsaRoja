@@ -1,8 +1,11 @@
 package com.labolsaroja.project.service;
 
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.labolsaroja.project.model.ChangePassword;
 import com.labolsaroja.project.model.Usuario;
@@ -76,6 +79,19 @@ usuarioRepository.deleteById(id);;
 		
 		return tmp;
 	}
+	
+	public Usuario validateUsuario(String email , String contrasena) {
+		Optional<Usuario> userByEmail=
+				usuarioRepository.findByEmail(email);
+		if (userByEmail.isPresent()) {
+			Usuario user=userByEmail.get();
+			
+				if(user.getContrasena().equals(contrasena)){ 
+				return user;
+				}
+		}//if isPresent
+		return null;
+	}//validateUsuario
 
 
 
