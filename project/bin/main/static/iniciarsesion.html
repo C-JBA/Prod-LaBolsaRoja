@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="./css/iniciarsesion.css">
+  <link rel="stylesheet" href="./css/navbar.css">
+  <link rel="stylesheet" href="./css/footer.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+  <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/btn.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="check-circle-fill" viewBox="0 0 16 16">
+      <path
+        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+    </symbol>
+  </svg>
+  <title>Inicia sesión</title>
+</head>
+
+<body>
+  <header>
+  <div class="container__menu">
+    <div class="logo">
+      <img src="./src/logo-magtimus-v2.3-1.png" alt="">
+    </div>
+    <div class="menu">
+      <i class="fas fa-bars" id="btn_menu"></i>
+      <div id="back_menu"></div>
+      <nav id="nav">
+        <img src="./src/developer_activity.svg" alt="">
+        <ul>
+          <li><a href="./index.html">Inicio</a></li>
+          <li><a href="./productos.html">Productos</a></li>
+          <li><a href="./acercadenosotros.html">Nosotros</a></li>
+          <li><a href="./comunidad.html">Comunidad</a></li>
+          <li><a href="./contacto.html">Contáctanos</a></li>
+          <li><a href="./registro.html" class="perfil" id="selected"><i class="fas fa-user"></i></a></li>
+          <li><a href="./carrito.html"><i class="fas fa-shopping-cart"></i></a></li>
+        </ul>
+      </nav>
+    </div>
+  </div> 
+</header>
+  <br><br>
+
+<!--Formulario Iniciar Sesión-->
+<h1 class="text-center"><strong>Iniciar sesión</strong></a></h1>
+<br>
+  <div class="container-form-is" id="form">
+      <form>
+        <div class="input-group">
+          <span class="input-group-text labelText">Email:</span>
+          <input type="text" placeholder="example@gmail.com" textarea class="form-control" aria-label="mail"
+            id="mail"></textarea>
+        </div>
+        <br>
+         <!--Formulario contraseña-->
+        <div class="input-group">
+          <span class="input-group-text labelText">Contraseña:</span>
+          <input id="txtPassword" pattern=".{10,}" type="Password" Class="form-control" placeholder="mínimo 6 caracteres">
+          <div class="input-group-pswd">
+            <button style="position: static;" id="show_password" class="btn ojo" type="button" onclick="mostrarPassword()"> <span style="position: static;"
+                class="fa fa-eye-slash icon"></span> </button>
+          </div>
+        </div>
+        <br>
+              <button type="button" id="button1" class="btn-danger" >Iniciar sesión</button>
+              <button type="button" id="button2" class="btn-danger" data-bs-toggle="modal" data-bs-target="#openModal" >
+                Recuperar contraseña
+              </button>
+              <p class="warnings" id="warnings"></p>
+      </form>
+      <br>
+  </div>
+
+  <br>
+  <br>
+  
+
+    
+  <div class="modal" tabindex="-1" id="openModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Recuperar contraseña</h5>
+    
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Ingresa tu correo registrado:</p>
+          <div class="input-group">
+            
+            <input type="text" placeholder="example@gmail.com" textarea class="form-control" aria-label="mail2"
+              id="mail2"></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="button3" class="btn btn-danger" data-target="#pwdModal" data-toggle="modal" >Enviar</button>
+          <p class="warnings" id="warningsRecuperar"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  
+
+    
+    
+
+
+  <br>
+  <br>
+
+  <section>
+    <div class="barra-nav">
+      <a href="./index.html"><i class="fas fa-home"></i></a>
+      <a href="./registro.html" class="perfil"><i class="fas fa-user"></i></a>
+      <a href="./carrito.html"><i class="fas fa-shopping-cart"></i></a>
+    </div>
+  </section>
+
+  <footer class="text-center text-white" style="background-color: #f1f1f1;">
+    <!-- Grid container -->
+    <div class="container pt-4">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Whastapp -->
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://wa.me/5215580492135?text=Hola,%20buen%20día,%20me%20interesa%20saber%20más%20sobre%20sus%20productos." role="button"
+          data-mdb-ripple-color="dark"><i class="fab fa-whatsapp"></i></a>
+        <!-- Facebook -->
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+          data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i></a>
+        <!-- Youtube -->
+        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button"
+          data-mdb-ripple-color="dark"><i class="fab fa-youtube"></i></a>
+      </section>
+      <!-- Section: Social media -->
+    </div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2023 Copyright:
+      <a class="text-dark" href="https://labolsaroja.com/">labolsaroja.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+    crossorigin="anonymous"></script>
+    
+    <!--Scrip Formulario mostrar contraseña-->
+    
+    <script defer type="text/javascript">
+      function mostrarPassword(){
+          var cambio = document.getElementById("txtPassword");
+          if(cambio.type == "password"){
+            cambio.type = "text";
+            $('.icon').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+          }else{
+            cambio.type = "password";
+            $('.icon').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+          }
+        } 
+        // function mostrarPassword2(){
+        //   var cambio2 = document.getElementById("txtPassword2");
+        //   if(cambio2.type == "password"){
+        //     cambio2.type = "text";
+        //     $('.icon2').removeClass('fa fa-eye-slash').addClass('fa fa-eye');
+        //   }else{
+        //     cambio2.type = "password";
+        //     $('.icon2').removeClass('fa fa-eye').addClass('fa fa-eye-slash');
+        //   }
+        // } 
+      </script>
+      <script src="./js/navbar.js"></script>
+      <script src="./js/iniciarsesion.js"></script>    
+      <script src="https://smtpjs.com/v3/smtp.js"></script> 
+</body>
+</html>

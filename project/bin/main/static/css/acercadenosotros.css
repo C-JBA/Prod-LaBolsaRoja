@@ -1,0 +1,79 @@
+
+/*TEXTO------------------------------------------------------------------------------------------*/
+h1{
+    font-family: 'Bebas Neue', cursive;
+    align-items: center;
+    animation-duration: 3s;
+    animation-name: slidein;
+  }
+
+p{
+  text-align: justify;
+  font-size: large;
+  animation-duration: 2s;
+  animation-name: slidein;
+  animation-iteration-count: initial;
+}
+  
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+      width: 300%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 100%;
+    }
+  }
+
+ 
+/*Títulos de Acerca de Nosotros*/
+.ancho{
+  max-width: 767px;
+  align-self: center;
+}
+
+.colancho{
+  max-width: 350px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.titulocon{
+  font-size: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(191, 64, 17);
+}
+
+
+.bi{
+    color: #C4C4C4;
+}
+
+.valores{
+    color: rgb(191, 64, 17);
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Cards de Misión y visión */
+
+.cardacerca{
+  margin-top: 1rem;
+  color: rgb(191, 64, 17);
+  font-size: 5rem;
+}
+
+.centrar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

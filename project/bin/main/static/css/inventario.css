@@ -1,0 +1,50 @@
+.btn-enviar{
+    margin: 0 auto;
+}
+
+.prueba{
+    display: none;
+}
+.container-form-inv{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 25px;
+    background-color: rgba(201, 9, 9, 0);
+    border-color: rgb(191, 64, 17);
+    border-radius: 50px;
+    border-style: solid;
+    text-align: center;
+}
+.labelText{
+    width: 110px;
+    justify-content: center;
+}
+
+.warnings{
+    width: 200px;
+      text-align: center;
+      margin: auto;
+      color: rgb(191, 64, 17);
+      padding-top: 20px;
+  }
+
+  
+@media (max-width: 450px){
+    .prueba{
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+    .labelText-mobile{
+        display: none;
+    }
+    .container-form-inv{
+        padding:25px;
+        max-width: 315px;
+        margin: 0 auto;
+    }
+    .labelText{
+        width: 90px;
+        justify-content: center;
+    }
+    
+}

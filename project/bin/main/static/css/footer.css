@@ -1,0 +1,21 @@
+/*FOOTER-------------------------------------------------------------------------------*/
+footer{
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+
+  
+  .text-center text-dark p-3 {}
+
+  @media only screen and (max-width: 720px) {
+    footer{
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+  }
