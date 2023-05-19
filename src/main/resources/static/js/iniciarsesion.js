@@ -41,7 +41,7 @@ var requestOptions = {
 fetch(`/api/login/password/?email=${trimEmail2}`, requestOptions)
   .then(function(response){response.json().then(function (json){
 	  
-let usuario=JSON.stringify(json);
+let usuario=json;
 console.log("Hola");
 	console.log(usuario);
 let correo = usuario.email;
