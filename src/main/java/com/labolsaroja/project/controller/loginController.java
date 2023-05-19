@@ -4,6 +4,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Optional;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import javax.servlet.ServletException;
 
 
@@ -47,11 +48,11 @@ public Usuario loginUsuario(@RequestParam String email ,@RequestParam String con
 }//loginUsuario
 
 
-//@PostMapping
-//public Usuario passwordReset(@RequestParam String email) {
-//	
-//	return usuarioService.passwordReset(email);
-//}//passwordReset
+@GetMapping(path="{email}")
+public Usuario passwordReset(@PathVariable("email") String email) {
+	
+	return usuarioService.passwordReset(email);
+}//passwordReset
 
 
 
