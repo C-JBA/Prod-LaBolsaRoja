@@ -47,7 +47,7 @@ public Usuario loginUsuario(@RequestParam String email ,@RequestParam String con
 }//loginUsuario
 
 
-@GetMapping
+@PostMapping
 public Usuario passwordReset(@RequestParam String email) {
 	
 	return usuarioService.passwordReset(email);
