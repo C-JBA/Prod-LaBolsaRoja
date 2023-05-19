@@ -95,20 +95,13 @@ usuarioRepository.deleteById(id);;
 	}//validateUsuario
 
 
-	public Usuario passwordReset(String email) {
-		
-		Optional<Usuario> userByEmail=
-				usuarioRepository.findByEmail(email);
-		if (userByEmail.isPresent()) {
-			Usuario user=userByEmail.get();
-			
-				if(user.getEmail().equals(email)){ 
-				return user;
-				}
-		}//if isPresent
-		return null;
-		
-	}//passwordReset
+public Usuario passwordReset(String email) {
+    Optional<Usuario> userByEmail = usuarioRepository.findByEmail(email);
+    if (userByEmail.isPresent()) {
+        return userByEmail.get();
+    }
+    return null;
+}
 	
 
 
