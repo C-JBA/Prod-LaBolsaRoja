@@ -29,7 +29,13 @@ btn3.addEventListener("click", e => {
     parrafo2.innerHTML = "";
     let trimEmail2 = email2.value.trim();
 
+var raw = "";
 
+var requestOptions = {
+  method: 'GET',
+  body: raw,
+  redirect: 'follow'
+};
 
 fetch(`/api/login/?email=${trimEmail2}`, requestOptions)
   .then(function(response){response.json().then(function (json){
