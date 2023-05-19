@@ -4,7 +4,6 @@ let contain = document.getElementById("contain");
 const parrafo = document.getElementById("warnings");
 let id = 0;
 let carrito;
-let src=`/src/productos_prueba/`;
 carrito = JSON.parse(localStorage.getItem("carrito"));
 
 if (carrito == undefined) {
@@ -104,12 +103,23 @@ btnPagar.addEventListener("click", e => {
 
 
 function actualizarTabla() {
+	
+
+function actualizarTabla() {
     while (Tabla.firstChild) {
         Tabla.removeChild(Tabla.firstChild);
     }
-    let total = 0;
-    carrito.forEach((element, index) => {
-		im=src+element.img;
+
+localStorage.removeItem(inventario);
+
+ let total = 0;
+	
+	
+    while (Tabla.firstChild) {
+        Tabla.removeChild(Tabla.firstChild);
+    }
+    carrito.forEach(element=> {
+		im=element.img;
         let subtotal = element.inventary * element.precio;
         total += subtotal;
         let html = `
