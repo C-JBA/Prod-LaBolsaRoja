@@ -54,7 +54,7 @@
 /*Redomendados*/
 
 .img-fluid {
-  max-width: 50%;
+  max-width: 80%;
 }
 
 .container-fluid {
@@ -62,7 +62,7 @@
 }
 
 .product-item {
-  max-width: 200px;
+  max-width: 300px;
 }
 
 
