@@ -168,6 +168,7 @@ function quitarProducto(index) {
 		    console.log("index"+index);
 		    console.log("indx"+indx);
                 carrito.splice(indx, 1);
+		localStorage.setItem("carrito", JSON.stringify(carrito));
                 actualizarTabla();
             }
         }
