@@ -57,6 +57,23 @@ function actualizarTabla() {
         Tabla.removeChild(Tabla.firstChild);
     }
 
+localStorage.removeItem(inventario);
+
+
+  fetch('/api/producto/',{method:'GET'})
+        .then(response => response.json())
+        .then(data => {
+            inventario = data;
+            localStorage.getItem("inventario",inventario);
+            actualizarTabla();
+        })
+        .catch(error => {
+            console.error('Error al leer la base de datos:', error);
+        });
+        
+        
+        
+        
     inventario.forEach(element => {
 		let im=element.img;
 		console.log(element.idProducto)
