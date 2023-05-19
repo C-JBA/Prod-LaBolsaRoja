@@ -167,7 +167,7 @@ btnEnviar.addEventListener("click", e => {
             </div>
         </div>`;
         actualizarTabla();
-	        }, 6000);
+	        }, 2000);
 
     }
     borderTimeout();
