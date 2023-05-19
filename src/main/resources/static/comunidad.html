@@ -58,6 +58,217 @@
       <a href="./carrito.html"><i class="fas fa-shopping-cart"></i></a>
     </div>
   </section>
+  
+  <main>
+    <h1 class="titulo">Preguntas Frecuentes</h1>
+    <div class="categorias" id="categorias">
+      <div class="categoria activa" data-categoria="horario-de-servicio">
+        <svg xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+          <path
+            d="M256 0a256 256 0 1 1 0 512A256 256 0 1 1 256 0zM232 120V256c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z" />
+        </svg>
+        <p>Horario de Servicio</p>
+      </div>
+      <div class="categoria" data-categoria="pedidos_y_cotizaciones">
+        <svg xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 384 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+          <path
+            d="M280 64h40c35.3 0 64 28.7 64 64V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128C0 92.7 28.7 64 64 64h40 9.6C121 27.5 153.3 0 192 0s71 27.5 78.4 64H280zM64 112c-8.8 0-16 7.2-16 16V448c0 8.8 7.2 16 16 16H320c8.8 0 16-7.2 16-16V128c0-8.8-7.2-16-16-16H304v24c0 13.3-10.7 24-24 24H192 104c-13.3 0-24-10.7-24-24V112H64zm128-8a24 24 0 1 0 0-48 24 24 0 1 0 0 48z" />
+        </svg>
+        <p>Pedidos y Cotizaciones</p>
+      </div>
+      <div class="categoria" data-categoria="materiales">
+        <svg xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 576 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+          <path
+            d="M264.5 5.2c14.9-6.9 32.1-6.9 47 0l218.6 101c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 149.8C37.4 145.8 32 137.3 32 128s5.4-17.9 13.9-21.8L264.5 5.2zM476.9 209.6l53.2 24.6c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 277.8C37.4 273.8 32 265.3 32 256s5.4-17.9 13.9-21.8l53.2-24.6 152 70.2c23.4 10.8 50.4 10.8 73.8 0l152-70.2zm-152 198.2l152-70.2 53.2 24.6c8.5 3.9 13.9 12.4 13.9 21.8s-5.4 17.9-13.9 21.8l-218.6 101c-14.9 6.9-32.1 6.9-47 0L45.9 405.8C37.4 401.8 32 393.3 32 384s5.4-17.9 13.9-21.8l53.2-24.6 152 70.2c23.4 10.8 50.4 10.8 73.8 0z" />
+        </svg>
+        <p>Materiales</p>
+      </div>
+      <div class="categoria" data-categoria="impresiones_y_diseño">
+        <svg xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+          <path
+            d="M471.6 21.7c-21.9-21.9-57.3-21.9-79.2 0L362.3 51.7l97.9 97.9 30.1-30.1c21.9-21.9 21.9-57.3 0-79.2L471.6 21.7zm-299.2 220c-6.1 6.1-10.8 13.6-13.5 21.9l-29.6 88.8c-2.9 8.6-.6 18.1 5.8 24.6s15.9 8.7 24.6 5.8l88.8-29.6c8.2-2.7 15.7-7.4 21.9-13.5L437.7 172.3 339.7 74.3 172.4 241.7zM96 64C43 64 0 107 0 160V416c0 53 43 96 96 96H352c53 0 96-43 96-96V320c0-17.7-14.3-32-32-32s-32 14.3-32 32v96c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96z" />
+        </svg>
+        <p>Impresiones y Diseño</p>
+      </div>
+    </div>
+
+    <div class="preguntas">
+
+      <!-- Horario de Servicio -->
+      <div class="contenedor-preguntas activo" data-categoria="horario-de-servicio">
+        <div class="contenedor-pregunta">
+          <p class="pregunta">¿A qué hora abren? <img src="./src/img/suma.png" alt="Abrir Respuesta" /></p>
+          <p class="respuesta">Abrimos a las 10:30 a.m.</p>
+        </div>
+        <div class="contenedor-pregunta">
+          <p class="pregunta">¿A qué hora cierran? <img src="./src/img/suma.png" alt="Abrir Respuesta" /></p>
+          <p class="respuesta">Cerramos a las 6:00 p.m. de lunes a viernes y los sábados a las 3:00 p.m.</p>
+        </div>
+        <div class="contenedor-pregunta">
+          <p class="pregunta">¿Qué días laboran?<img src="./src/img/suma.png" alt="Abrir Respuesta" /></p>
+          <p class="respuesta">Laboramos de lunes a sábado.</p>
+        </div>
+      </div>
+
+      <!-- Pedidos y Cotizaciones -->
+      <div class="contenedor-preguntas" data-categoria="pedidos_y_cotizaciones">
+        <div class="contenedor-pregunta">
+          <p class="pregunta">¿Cuántas piezas son mayoreo? <img src="./src/img/suma.png" alt="Abrir Respuesta" /></p>
+          <p class="respuesta">A partir de 25 piezas en adelante.</p>
+        </div>
+        <div class="contenedor-pregunta">
+          <p class="pregunta">¿Cuánto es el precio de menudeo?<img src="./src/img/suma.png" alt="Abrir Respuesta" /></p>
+          <p class="respuesta">Aumenta $2.00 al precio de mayoreo en cantidades menores a 25 piezas.</p>
+        </div>
+        <div class="contenedor-pregunta">
+          <p class="pregunta">¿Hacen medida especial y cuántas piezas son a fabricar? <img src="./src/img/suma.png"
+              alt="Abrir Respuesta" /></p>
+          <p class="respuesta">Son mínimo 100 piezas de un mismo color, siempre y cuando sean de los materiales y
+            modelos que nosotros manejamos. En cuyo caso no se puede hacer la media encomendada se le va notificar .
+          </p>
+        </div>
+        <div class="contenedor-pregunta">
+          <p class="pregunta">¿Cuáles son sus fechas de entrega?<img src="./src/img/suma.png" alt="Abrir Respuesta" />
+          </p>
+          <p class="respuesta">Las fechas de entrega son de 8 a 10 días hábiles y también va dependiendo de la cantidad
+            de piezas y si estamos en temporada alta.</p>
+        </div>
+        <div class="contenedor-pregunta">
+          <p class="pregunta">¿Cuántos días tardan en entregar mi pedido con serigrafía? <img src="./src/img/suma.png"
+              alt="Abrir Respuesta" /></p>
+          <p class="respuesta">Le entregamos en 5 días si tenemos en existencia.</p>
+        </div>
+        <div class="contenedor-pregunta">
+          <p class="pregunta">¿Hacen envíos?<img src="./src/img/suma.png" alt="Abrir Respuesta" /></p>
+          <p class="respuesta">No hacemos envíos, pero pueden comprar su número de guía y que la paquetería pase al
+            local.</p>
+        </div>
+        <div class="contenedor-pregunta">
+          <p class="pregunta">¿Es seguro la fecha de entrega? <img src="./src/img/suma.png" alt="Abrir Respuesta" /></p>
+          <p class="respuesta">Si, es seguro la fecha de entrega siempre y cuando autorice su muestra virtual o haga su
+            anticipo a tiempo</p>
+        </div>
+        <div class="contenedor-pregunta">
+          <p class="pregunta">¿Facturan?<img src="./src/img/suma.png" alt="Abrir Respuesta" /></p>
+          <p class="respuesta">Si, es más IVA.</p>
+        </div>
+        <div class="contenedor-pregunta">
+          <p class="pregunta">¿Necesitan anticipo? <img src="./src/img/suma.png" alt="Abrir Respuesta" /></p>
+          <p class="respuesta">Si, para poder empezar a trabajar su pedido y sería del 50% de anticipo.</p>
+        </div>
+        <div class="contenedor-pregunta">
+          <p class="pregunta">¿Las 25 piezas son del mismo modelo o pueden ser combinadas?<img src="./src/img/suma.png"
+              alt="Abrir Respuesta" /></p>
+          <p class="respuesta">Pueden ser combinadas hasta completar las 25 piezas.</p>
+        </div>
+        <div class="contenedor-pregunta">
+          <p class="pregunta">¿Puede recoger otra persona presentando mi nota?<img src="./src/img/suma.png"
+              alt="Abrir Respuesta" /></p>
+          <p class="respuesta">Si, no hay ningún problema.</p>
+        </div>
+        <div class="contenedor-pregunta">
+          <p class="pregunta">¿Baja el precio si son más piezas?<img src="./src/img/suma.png" alt="Abrir Respuesta" />
+          </p>
+          <p class="respuesta">No, el precio de mayoreo toma en cuenta cantidades superiores a partir de 25 piezas.</p>
+        </div>
+        <div class="contenedor-pregunta">
+          <p class="pregunta">¿Aceptan pagos con tarjeta o transferencia?<img src="./src/img/suma.png"
+              alt="Abrir Respuesta" /></p>
+          <p class="respuesta">Solo aceptamos pago en efectivo o transferencia.</p>
+        </div>
+      </div>
+
+      <!-- Materiales -->
+      <div class="contenedor-preguntas" data-categoria="materiales">
+        <div class="contenedor-pregunta">
+          <p class="pregunta">¿Qué tipo de material es para sublimar? <img src="./src/img/suma.png"
+              alt="Abrir Respuesta" /></p>
+          <p class="respuesta">Los materiales para sublimar son de loneta para sublimar, manta para sublimar,
+            semicanasta, silver, canasta lisa, tafetán y terciopelo.</p>
+        </div>
+        <div class="contenedor-pregunta">
+          <p class="pregunta">¿Qué tipo de material es para serigrafía? <img src="./src/img/suma.png"
+              alt="Abrir Respuesta" />
+          </p>
+          <p class="respuesta">Todos los materiales se le pueden poner serigrafía, por ejemplo: manta, poliéster 600,
+            canasta lisa, non woven, loneta, papel kraft, etc.</p>
+        </div>
+        <div class="contenedor-pregunta">
+          <p class="pregunta">¿Qué tipo de modelos trabajan en el material non woven?<img src="./src/img/suma.png"
+              alt="Abrir Respuesta" /></p>
+          <p class="respuesta">Plana y con fuelle.</p>
+        </div>
+        <div class="contenedor-pregunta">
+          <p class="pregunta">¿Qué materiales se pegan al momento de plancharlo? <img src="./src/img/suma.png"
+              alt="Abrir Respuesta" />
+          </p>
+          <p class="respuesta">El material de canasta lisa y poliéster 600, el non woven se quema tendrían que checar la
+            temperatura. </p>
+        </div>
+        <div class="contenedor-pregunta">
+          <p class="pregunta">¿Qué materiales se les puede poner vinil textil o DTF?<img src="./src/img/suma.png"
+              alt="Abrir Respuesta" />
+          </p>
+          <p class="respuesta">Serian los materiales de manta, loneta negra y cruda, mezclilla, poliéster, silver y
+            yute.</p>
+        </div>
+      </div>
+
+      <!-- Impresiones y Diseño -->
+      <div class="contenedor-preguntas" data-categoria="impresiones_y_diseño">
+        <div class="contenedor-pregunta">
+          <p class="pregunta">¿Hacen sublimación?<img src="./src/img/suma.png" alt="Abrir Respuesta" />
+          </p>
+          <p class="respuesta">No, no se hace el trabajo de sublimación.</p>
+        </div>
+        <div class="contenedor-pregunta">
+          <p class="pregunta">¿Hacen serigrafía?<img src="./src/img/suma.png" alt="Abrir Respuesta" />
+          </p>
+          <p class="respuesta">Si, se realiza el trabajo de serigrafia.</p>
+        </div>
+        <div class="contenedor-pregunta">
+          <p class="pregunta">¿A partir de cuántas piezas hacen la serigrafía?<img src="./src/img/suma.png"
+              alt="Abrir Respuesta" />
+          </p>
+          <p class="respuesta">A partir de 100 piezas, podemos imprimir menos piezas, pero se cobrará como si fueran 100
+            a imprimir.</p>
+        </div>
+        <div class="contenedor-pregunta">
+          <p class="pregunta">¿Imprimen en tinta dorada?<img src="./src/img/suma.png" alt="Abrir Respuesta" />
+          </p>
+          <p class="respuesta">No hacemos impresión en tinta dorada ni plata, tampoco imprimimos en colores que
+            necesiten pantone.</p>
+        </div>
+        <div class="contenedor-pregunta">
+          <p class="pregunta">¿Cómo necesitan el diseño? <img src="./src/img/suma.png" alt="Abrir Respuesta" />
+          </p>
+          <p class="respuesta"> El diseño se debe de mandar en formato PDF, vectorizado y en negro sólido.</p>
+        </div>
+        <div class="contenedor-pregunta">
+          <p class="pregunta">¿Sino tengo el diseño ustedes lo pueden hacer?<img src="./src/img/suma.png"
+              alt="Abrir Respuesta" />
+          </p>
+          <p class="respuesta">Si, se puede trabajar el diseño y tendría un costo de $100.00 </p>
+        </div>
+        <div class="contenedor-pregunta">
+          <p class="pregunta">¿Trabajan el vinil textil o el DTF?<img src="./src/img/suma.png" alt="Abrir Respuesta" />
+          </p>
+          <p class="respuesta">No, no se realiza este tipo de trabajos.</p>
+        </div>
+        <div class="contenedor-pregunta">
+          <p class="pregunta">¿Cuánto tiempo tardan en entregar los cortes para el sublimado?<img
+              src="./src/img/suma.png" alt="Abrir Respuesta" />
+          </p>
+          <p class="respuesta">Le tardamos de 3 a 4 días.</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
 
   <footer class="text-center text-white" style="background-color: #f1f1f1;">
     <!-- Grid container -->
