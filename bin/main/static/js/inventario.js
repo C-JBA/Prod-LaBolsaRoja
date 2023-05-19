@@ -7,35 +7,32 @@ const form = document.getElementById("form");
 const parrafo = document.getElementById("warnings");
 const btnEnviar = document.getElementById("btn-enviar");
 let Tabla = document.getElementById("Inventario");
-let imgBase64 = "";
+let imgInfo;
 let inventario;
 let id = 0;
-let src=`/src/productos_prueba/`;
-
-let fileImage = document.getElementById('fileImage');
-let btnFake = document.getElementById('btnFake');
-let imageFile = document.getElementById('imageFile');
-
-btnFake.addEventListener('click', function () {
-    fileImage.click();
-});
-
-fileImage.addEventListener('change', function () {
-    chargeFile('fileImage')
-});
-
-function chargeFile(inputFile) {
-    var file = document.getElementById(inputFile).files[0];
-    var reader = new FileReader();
+let upload_widget = document.getElementById('upload_widget');
     
-       if (file) {
-        reader.readAsDataURL(file);
-        reader.onload = function (e) {
-            imgBase64 = e.target.result;
-            parrafo.innerHTML = "Imagen cargada correctamente";
+    
+    
+upload_widget.addEventListener("click", function(){
+    var myWidget = cloudinary.createUploadWidget({
+        cloudName: 'dbga7wcqn', 
+        uploadPreset: 'gpch6swh'}, (error, result) => { 
+          if (!error && result && result.event === "success") { 
+            console.log('Done! Here is the image info: ', result.info.url); 
+            imgInfo=result.info.url;
+            parrafo.innerHTML.style="color: green";
+            parrafo.innerHTML =
+            `<p>Imágen cargada correctamente.</p>`;
+            console.log(imgInfo);
+
+          }
         }
-    }// file
-}
+      );
+    myWidget.open();
+  }, false);
+
+
 
 if (localStorage.getItem("productos") == null) {
 fetch('/api/producto/',{method:'GET'})
@@ -61,7 +58,7 @@ function actualizarTabla() {
     }
 
     inventario.forEach(element => {
-		let im=src+element.img;
+		let im=element.img;
 		console.log(element.idProducto)
         let html = `
         <tr>
@@ -102,7 +99,7 @@ btnEnviar.addEventListener("click", e => {
     let trimName = nombre.value.trim();
     let trimDescription = descripcion.value.trim();
     let trimPrice = precio.value.trim();
-    let trimImage = imgBase64;
+    let trimImage = imgInfo;
 
 
     if (trimName.length <= 2) {
@@ -169,7 +166,7 @@ var raw = JSON.stringify({
         "fuelle": 11,
   "descripcion": description,
   "precio": price,
-  "img": "bolsaRojaPeq.jpg"
+  "img": image
   
 });
 
@@ -196,19 +193,8 @@ fetch("/api/producto/", requestOptions)
             console.error('Error al leer el archivo JSON:', error);
         });
   
-  
-//		var requestOptions = {
-//  method: 'POST',
-//  redirect: 'follow'
-//};
-//
-//fetch(`http://127.0.0.1:8080/api/productos/?nombre=${title}&precio=${price}&descripcion=${description}&img=${image}`, requestOptions)
-//  .then(response => response.text())
-//  .then(result => console.log(result))
-//  .catch(error => console.log('error', error));
-
         id = inventario.length + 1;
-        inventario.push({ id: id, title: title, price: price, description: description, image: image});
+        inventario.push({title: title, price: price, description: description, image: image});
         localStorage.setItem("productos", JSON.stringify(inventario));
         document.getElementById("name").value = "";
         document.getElementById("price").value = "";
