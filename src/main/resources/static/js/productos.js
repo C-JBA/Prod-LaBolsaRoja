@@ -2,7 +2,6 @@ let productos;
 let cardGroup = document.getElementsByClassName("row");
 let carrito=[];
 let cantidad;
-let src=`/src/productos_prueba/`;
 function agregarAlCarrito(idk) {
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
@@ -54,7 +53,7 @@ fetch('/api/producto/',{method:'GET'})
           </div>
           <div class="modal-body">
           <br><p>
-            <img  src=${im} class="card-img-top card-image">
+            <img  src=${element.img} class="card-img-top card-image">
             </p>
             
 <div class="row g-2">
