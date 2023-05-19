@@ -47,7 +47,8 @@
       transform: translateY(15px);
   }
 }
-/*Redomendados(al final el código para las estrellas color rojo
+
+/*Redomendados*/
 
 .img-fluid {
   max-width: 50%;
@@ -60,7 +61,7 @@
 .product-item {
   max-width: 200px;
 }
-<i class="fa-solid fa-star" style="color: #bf4011;"></i>*/
+
 
 /*Bolsin responsivo*/
 @media only screen and (max-width: 767px) {
