@@ -121,6 +121,7 @@ function borderTimeoutSuccess(){
         warningMessage.innerText="";
         warningName.innerText="";
         warningPhone.innerText="";
+        parrafo.innerHTML="";
     },5000);
 }
 
