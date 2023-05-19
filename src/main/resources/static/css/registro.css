@@ -70,3 +70,16 @@ span.labelText{
     margin-left: 30%;
     border-style: none;
 }
+.title{
+    color: #3a3a3a;
+  font-size: calc(1.375rem + 1.5vw);
+  font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 700;
+	text-align: center;
+	margin: 40px 0;
+}
+.title a{
+	font-weight: 700;
+	text-align: center;
+	margin: 40px 0;
+}

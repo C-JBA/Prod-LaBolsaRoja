@@ -1,11 +1,14 @@
 .text {
-  max-width: 80%;
+  max-width: 70%;
   margin: 0 auto; /* Para centrar el texto horizontalmente */
 }
 
 .container__cover .text h1{
   font-size: 36px;
   font-weight: 600;
+  color: #3a3a3a;
+  font-size: calc(1.375rem + 1.5vw);
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 .container__cover .text p{
