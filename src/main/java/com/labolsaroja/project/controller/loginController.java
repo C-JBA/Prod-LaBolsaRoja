@@ -54,6 +54,7 @@ public Usuario recuperaContrasena(@RequestParam String email) {
 	Optional<Usuario> userByEmail=
 			usuarioRepository.findByEmail(email);
 	if (userByEmail.isPresent()) {
+				Usuario user=userByEmail.get();
 		return user;	
 	}//if isPresent
 	return null;
