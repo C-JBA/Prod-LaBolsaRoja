@@ -96,14 +96,25 @@ localStorage.removeItem(inventario);
 
 function quitarProducto(index) {
     // Eliminar el producto del inventario
-    inventario.forEach((element, indx) => {
-        if (element.id == index) {
-            inventario.splice(indx, 1);
-            actualizarTabla();
-        }
-    }
-    );
-}
+//     inventario.forEach((element, indx) => {
+//         if (element.id == index) {
+//             inventario.splice(indx, 1);
+//             actualizarTabla();
+//         }
+//     }
+//     );
+	var requestOptions = {
+  method: 'DELETE',
+  redirect: 'follow'
+};
+
+fetch(`/api/usuarios/${index}`, requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+	actualizarTabla();
+	
+}//quitarProducto
 
 btnEnviar.addEventListener("click", e => {
    e.preventDefault();
