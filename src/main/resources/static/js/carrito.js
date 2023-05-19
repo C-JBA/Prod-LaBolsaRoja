@@ -39,10 +39,10 @@ btnPagar.addEventListener("click", e => {
             mail = "doe1199887766@66778899doe.doe"
 
         } else {
-            nombr = usr.name;
-            telefon = usr.telefon;
+            nombr = usr.nombre;
+            telefon = usr.telefono;
             aidi = usr.id;
-            mail = usr.mail;
+            mail = usr.email;
         }
         let tot=0;
         let pedidoDetails = "";
@@ -107,7 +107,7 @@ function actualizarTabla() {
     }
 
 localStorage.removeItem(inventario);
-
+ carrito= JSON.parse(localStorage.getItem("UsuarioActivo"));
  let total = 0;
 	
     carrito.forEach(element=> {
