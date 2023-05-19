@@ -57,7 +57,6 @@ btnPagar.addEventListener("click", e => {
 
         let ebodyCliente = `
         <h3>Estimado ${nombr}, gracias por comprar en La Bolsa Roja, aquí está el resumen de su pedido:</h3>
-        <h3>No. de cliente: ${aidi}</h3>
         <h3>${mail}</h3>
         <h3>${telefon}</h3><br>
         <h3>Detalles del pedido: </h3>
