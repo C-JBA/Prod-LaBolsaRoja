@@ -49,7 +49,10 @@ btnPagar.addEventListener("click", e => {
         let pedidoDetails = "";
         carrito.forEach((producto, index) => {
             tot+=producto.precio;
-            pedidoDetails += `<li>${index + 1}. ${producto.nombre} - ${producto.inventary} x $${producto.precio} = $${producto.inventary * producto.precio}</li>`;
+            pedidoDetails += `<li><br>
+	                <img  src="${producto.img}">
+			<br>
+	    ${index + 1}. ${producto.nombre} - ${producto.inventary} x $${producto.precio} = $${producto.inventary * producto.precio}</li>`;
         });
 
         let ebodyCliente = `
