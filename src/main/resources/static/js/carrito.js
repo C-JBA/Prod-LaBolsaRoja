@@ -15,6 +15,7 @@ if (carrito == undefined) {
     
 }
 
+
 actualizarTabla();
 
 btnPagar.addEventListener("click", e => {
