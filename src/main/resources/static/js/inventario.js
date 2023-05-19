@@ -159,21 +159,23 @@ btnEnviar.addEventListener("click", e => {
 
 });
 
-//funcion para que una vez que se verifiquen las entradas de datos se regrese al borde normal
+/// Función para que una vez que se verifiquen las entradas de datos se regrese al borde normal
 function borderTimeout() {
     setTimeout(() => {
         nombre.style.border = "";
         descripcion.style.border = "";
         precio.style.border = "";
-    }, 1500;
+    }, 1500);
 	
-//funcion quitar warnings
-	warning.title="";
-	warning.description="";
-	warning.price="";
-	warning.inventary="";
-	parrafo.innerHTML="";
-},1500);
+    // Función para quitar warnings
+    warning.title = "";
+    warning.description = "";
+    warning.price = "";
+    warning.inventary = "";
+    parrafo.innerHTML = "";
+}
+
+borderTimeout();
 
 function agregarProducto(title, price, description, image) {
 
