@@ -48,10 +48,15 @@ public Usuario loginUsuario(@RequestParam String email ,@RequestParam String con
 }//loginUsuario
 
 
-@GetMapping(path="{email}")
-public Usuario passwordReset(@PathVariable("email") String email) {
+@PostMapping(path="{email}")
+public Usuario passwordReset(@RequestParam String email) {
 	
-	return usuarioService.passwordReset(email);
+	Optional<Usuario> userByEmail=
+			usuarioRepository.findByEmail(email);
+	if (userByEmail.isPresent()) {
+		return user;	
+	}//if isPresent
+	return null;
 }//passwordReset
 
 
