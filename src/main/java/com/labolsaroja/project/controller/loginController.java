@@ -48,7 +48,7 @@ public Usuario loginUsuario(@RequestParam String email ,@RequestParam String con
 }//loginUsuario
 
 
-@GetMapping
+@PostMapping
 public Usuario recuperaContrasena(@RequestParam String email) {
 	
 	Optional<Usuario> userByEmail=
