@@ -108,7 +108,7 @@ function quitarProducto(index) {
   redirect: 'follow'
 };
 
-fetch(`/api/usuarios/${index}`, requestOptions)
+fetch(`/api/producto/${index}`, requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
@@ -182,11 +182,11 @@ function borderTimeout() {
         precio.style.border = "";
 
         // Función para quitar warnings
-        warning.title = "";
-        warning.description = "";
-        warning.price = "";
-        warning.inventary = "";
-        parrafo.innerHTML = "";
+       // warning.title = "";
+       // warning.description = "";
+       // warning.price = "";
+        //warning.inventary = "";
+        //parrafo.innerHTML = "";
     }, 1500);
 
 }
