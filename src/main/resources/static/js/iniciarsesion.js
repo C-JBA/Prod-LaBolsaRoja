@@ -81,7 +81,8 @@ let Mensaje = `
                 From: "javadabbado@gmail.com",
                 Subject: "Recuperar contraseña",
                 Body: ebody
-            });
+            })
+	
             parrafo2.innerHTML =
                 `<div  class="alert alert-success d-flex align-items-center" role="alert">
                 <svg  height="2rem"width="2rem" class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
