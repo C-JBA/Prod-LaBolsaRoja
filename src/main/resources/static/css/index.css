@@ -53,16 +53,27 @@
 
 /*Redomendados*/
 
+.container-fluid h2{
+  font-weight: 600;
+  color: #3a3a3a;
+  font-size: calc(1.2rem + 1.2vw);
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
 .img-fluid {
   max-width: 80%;
+
 }
 
 .container-fluid {
   text-align: center;
+  padding: 8%;
 }
 
 .product-item {
-  max-width: 300px;
+  max-width: 250px;
+  padding: 5%;
+  border-color: blue;
 }
 
 
