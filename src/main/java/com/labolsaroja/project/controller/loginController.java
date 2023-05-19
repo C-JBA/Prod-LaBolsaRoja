@@ -48,8 +48,8 @@ public Usuario loginUsuario(@RequestParam String email ,@RequestParam String con
 }//loginUsuario
 
 
-@PostMapping(path="{email}")
-public Usuario passwordReset(@RequestParam String email) {
+@PostMapping
+public Usuario recuperaContrasena(@RequestParam String email) {
 	
 	Optional<Usuario> userByEmail=
 			usuarioRepository.findByEmail(email);

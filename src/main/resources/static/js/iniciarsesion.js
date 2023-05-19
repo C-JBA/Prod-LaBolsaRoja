@@ -33,7 +33,7 @@ btn3.addEventListener("click", e => {
 var raw = "";
 
 var requestOptions = {
-  method: 'GET',
+  method: 'POST',
   body: raw,
   redirect: 'follow'
 };
@@ -43,6 +43,7 @@ fetch(`/api/login/?email=${trimEmail2}`, requestOptions)
 	  
 let usuario=JSON.stringify(json);
 console.log("Hola");
+	console.log(usuario);
 let correo = usuario.email;
 let name = usuario.nombre;
 let id = usuario.idUsuarios;
