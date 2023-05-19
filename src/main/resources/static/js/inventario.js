@@ -145,6 +145,8 @@ btnEnviar.addEventListener("click", e => {
         parrafo.innerHTML = warnings;
     } else {
         //Se agregan los productos al local storage
+	    
+	    setTimeout(() => {
         agregarProducto(trimName, trimPrice, trimDescription, trimImage);
         parrafo.innerHTML =
             `<div  class="alert alert-success d-flex align-items-center" role="alert">
@@ -154,6 +156,8 @@ btnEnviar.addEventListener("click", e => {
             </div>
         </div>`;
         actualizarTabla();
+	        }, 6000);
+
     }
     borderTimeout();
 
@@ -162,13 +166,13 @@ btnEnviar.addEventListener("click", e => {
 /// Función para que una vez que se verifiquen las entradas de datos se regrese al borde normal
 function borderTimeout() {
     setTimeout(() => {
-
-	        }, 6000);
-	
 	        nombre.style.border = "";
         descripcion.style.border = "";
         precio.style.border = "";
-    parrafo.innerHTML = "";
+    parrafo.innerHTML = " ";
+	        }, 6000);
+	
+
 }
 
 borderTimeout();
