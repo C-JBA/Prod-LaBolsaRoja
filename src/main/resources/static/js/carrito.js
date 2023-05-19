@@ -162,7 +162,11 @@ function quitarProducto(index) {
                 carrito = [];
                 btnPagar.click();
 
+		    console.log("index"+index);
+		    console.log("indx"+indx);
             } else {
+		    console.log("index"+index);
+		    console.log("indx"+indx);
                 carrito.splice(indx, 1);
                 actualizarTabla();
             }
