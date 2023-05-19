@@ -50,7 +50,7 @@ btnPagar.addEventListener("click", e => {
         carrito.forEach((producto, index) => {
             tot+=producto.precio;
             pedidoDetails += `<li><br>
-	                <img  src="${producto.img}">
+	                <img  src="${producto.img}" width="100 px" height="75 px">
 			<br>
 	    ${index + 1}. ${producto.nombre} - ${producto.inventary} x $${producto.precio} = $${producto.inventary * producto.precio}</li>`;
         });
