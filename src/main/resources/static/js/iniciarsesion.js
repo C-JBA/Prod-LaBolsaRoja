@@ -38,7 +38,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch(`/api/login/?email=${trimEmail2}`, requestOptions)
+fetch(`/api/login/password/?email=${trimEmail2}`, requestOptions)
   .then(function(response){response.json().then(function (json){
 	  
 let usuario=JSON.stringify(json);
