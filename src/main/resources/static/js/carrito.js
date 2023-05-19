@@ -105,9 +105,8 @@ function actualizarTabla() {
     while (Tabla.firstChild) {
         Tabla.removeChild(Tabla.firstChild);
     }
-
-localStorage.removeItem(inventario);
- carrito= JSON.parse(localStorage.getItem("UsuarioActivo"));
+    
+ carrito= JSON.parse(localStorage.getItem("carrito"));
  let total = 0;
 	
     carrito.forEach(element=> {
