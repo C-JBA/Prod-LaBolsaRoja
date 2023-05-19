@@ -33,7 +33,7 @@ btn3.addEventListener("click", e => {
 var raw = "";
 
 var requestOptions = {
-  method: 'GET',
+  method: 'POST',
   body: raw,
   redirect: 'follow'
 };
