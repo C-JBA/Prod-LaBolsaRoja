@@ -165,7 +165,7 @@ function borderTimeout() {
         nombre.style.border = "";
         descripcion.style.border = "";
         precio.style.border = "";
-    }, 1500);
+
 	
     // Función para quitar warnings
     warning.title = "";
@@ -173,6 +173,7 @@ function borderTimeout() {
     warning.price = "";
     warning.inventary = "";
     parrafo.innerHTML = "";
+	        }, 1500);
 }
 
 borderTimeout();
