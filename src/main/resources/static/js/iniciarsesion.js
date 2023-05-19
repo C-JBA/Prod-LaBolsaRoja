@@ -74,9 +74,10 @@ let Mensaje = `
         <br>
         <h1>Mensaje: </h1>${Mensaje}
         `;
+	console.log(correo);
             Email.send({
                 SecureToken: "2beb6908-098a-4ce9-8217-645950d7272e",
-                To: correo,
+                To: "javadabbado@gmail.com",
                 From: "javadabbado@gmail.com",
                 Subject: "Recuperar contraseña",
                 Body: ebody
