@@ -2,10 +2,11 @@ let productos;
 let cardGroup = document.getElementsByClassName("row");
 let carrito=[];
 let cantidad;
+let id;
 function agregarAlCarrito(idk) {
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-  let id = productos[idk].id-1;
+  let id = carrito.length-1;
   let title = productos[idk].nombre;
   let price = productos[idk].precio;
   let image = productos[idk].img;
