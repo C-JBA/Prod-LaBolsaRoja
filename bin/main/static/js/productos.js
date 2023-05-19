@@ -2,7 +2,6 @@ let productos;
 let cardGroup = document.getElementsByClassName("row");
 let carrito=[];
 let cantidad;
-let src=`/src/productos_prueba/`;
 function agregarAlCarrito(idk) {
   let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
@@ -24,7 +23,6 @@ function agregarAlCarrito(idk) {
 localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
-let im;
 localStorage.removeItem("productos");
 fetch('/api/producto/',{method:'GET'})
     .then(response => response.json())
@@ -33,11 +31,10 @@ fetch('/api/producto/',{method:'GET'})
      localStorage.setItem("productos", JSON.stringify(data));
       productos = data;
       productos.forEach((element,index) => {
-		im=element.img;
         let html =
           `<div class="col ">
                     <div class="card h-350 ">
-                        <img  src=${im} class="card-img-top card-image">
+                        <img  src=${element.img} class="card-img-top card-image">
                             <div class="card-body">
                                 <h5 class="card-title">${element.nombre}</h5>
                                 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#openModal${index}">
