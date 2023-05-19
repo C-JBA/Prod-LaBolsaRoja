@@ -99,12 +99,7 @@ btnPagar.addEventListener("click", e => {
     }
 })
 
-
-
-
-function actualizarTabla() {
 	
-
 function actualizarTabla() {
     while (Tabla.firstChild) {
         Tabla.removeChild(Tabla.firstChild);
