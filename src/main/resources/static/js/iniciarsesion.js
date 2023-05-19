@@ -10,7 +10,7 @@ const parrafo = document.getElementById("warnings");
 const parrafo2 = document.getElementById("warningsRecuperar");
 
 
-fetch
+
 
 if (localStorage.getItem("Users") == null) {
 
