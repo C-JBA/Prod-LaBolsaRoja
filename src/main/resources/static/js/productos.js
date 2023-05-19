@@ -8,7 +8,7 @@ function agregarAlCarrito(idk) {
   let id = productos[idk].id-1;
   let title = productos[idk].nombre;
   let price = productos[idk].precio;
-  let image = productos[id].img;
+  let image = productos[idk].img;
   let cantidad = Math.round(document.getElementById(`cantidad${idk}`).value);
 
   // Verificar si el producto ya existe en el carrito
