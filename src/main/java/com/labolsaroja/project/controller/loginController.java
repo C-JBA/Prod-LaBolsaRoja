@@ -47,12 +47,11 @@ public Usuario loginUsuario(@RequestParam String email ,@RequestParam String con
 }//loginUsuario
 
 
-@PostMapping
-public Usuario passwordReset(@RequestParam String email) {
-	
-	return usuarioService.passwordReset(email);
-	
-}//passwordReset
+//@PostMapping
+//public Usuario passwordReset(@RequestParam String email) {
+//	
+//	return usuarioService.passwordReset(email);
+//}//passwordReset
 
 
 
