@@ -3,7 +3,7 @@ import com.labolsaroja.project.service.UsuarioService;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Optional;
-
+import org.springframework.web.bind.annotation.GetMapping;
 import javax.servlet.ServletException;
 
 
@@ -47,7 +47,7 @@ public Usuario loginUsuario(@RequestParam String email ,@RequestParam String con
 }//loginUsuario
 
 
-@PostMapping
+@GetMapping
 public Usuario passwordReset(@RequestParam String email) {
 	
 	return usuarioService.passwordReset(email);
