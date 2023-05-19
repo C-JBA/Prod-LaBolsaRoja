@@ -9,6 +9,7 @@ const btn3 = document.getElementById("button3");
 const parrafo = document.getElementById("warnings");
 const parrafo2 = document.getElementById("warningsRecuperar");
 
+
 fetch
 
 if (localStorage.getItem("Users") == null) {
