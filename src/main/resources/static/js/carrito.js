@@ -19,6 +19,7 @@ actualizarTabla();
 
 btnPagar.addEventListener("click", e => {
     e.preventDefault();
+    
     let nombr;
     let telefon;
     let aidi;
@@ -109,18 +110,13 @@ localStorage.removeItem(inventario);
 
  let total = 0;
 	
-	
-    while (Tabla.firstChild) {
-        Tabla.removeChild(Tabla.firstChild);
-    }
     carrito.forEach(element=> {
-		im=element.img;
         let subtotal = element.inventary * element.precio;
         total += subtotal;
         let html = `
         <div class="row">
         <div class="col">
-                   <img  src=${im} width="100 px" height="75 px">
+                   <img  src=${element.img} width="100 px" height="75 px">
                    </div>
                   <div class="col">
                   <td><strong>${element.nombre}</strong></td>
