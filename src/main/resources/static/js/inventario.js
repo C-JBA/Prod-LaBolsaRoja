@@ -163,15 +163,20 @@ btnEnviar.addEventListener("click", e => {
 
 });
 
-/// Función para que una vez que se verifiquen las entradas de datos se regrese al borde normal
+// Función para que una vez que se verifiquen las entradas de datos se regrese al borde normal
 function borderTimeout() {
     setTimeout(() => {
-	        nombre.style.border = "";
+        nombre.style.border = "";
         descripcion.style.border = "";
         precio.style.border = "";
-    parrafo.innerHTML = " ";
-	        }, 6000);
-	
+
+        // Función para quitar warnings
+        warning.title = "";
+        warning.description = "";
+        warning.price = "";
+        warning.inventary = "";
+        parrafo.innerHTML = "";
+    }, 1500);
 
 }
 
