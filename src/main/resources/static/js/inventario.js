@@ -97,7 +97,11 @@ fetch(`/api/producto/${index}`, requestOptions)
   .then(response => response.json())
   .then(result => {a=result;
 		   console.log(a);
-		   	actualizarTabla();)
+		   	actualizarTabla();
+		   location.reload(true);
+		  }
+	
+		   )
   .catch(error => console.log('error', error));
 
 	
@@ -153,7 +157,9 @@ btnEnviar.addEventListener("click", e => {
                 Producto agregado correctamente.
             </div>
         </div>`;
+		    location.reload(true);
         actualizarTabla();
+		    
 	        }, 2000);
 
     }
