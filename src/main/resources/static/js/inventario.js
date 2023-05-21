@@ -9,7 +9,6 @@ const btnEnviar = document.getElementById("btn-enviar");
 let Tabla = document.getElementById("Inventario");
 let imgInfo;
 let inventario;
-let productos;
 let id = 0;
 let upload_widget = document.getElementById('upload_widget');
     
@@ -34,6 +33,23 @@ upload_widget.addEventListener("click", function(){
   }, false);
 
 
+
+if (localStorage.getItem("productos") == null) {
+fetch('/api/producto/',{method:'GET'})
+        .then(response => response.json())
+        .then(data => {
+            inventario = data;
+        })
+        .catch(error => {
+            console.error('Error al leer el archivo JSON:', error);
+        });
+
+} else {
+
+    inventario = JSON.parse(localStorage.getItem("productos"));
+
+}
+
 actualizarTabla();
 
 function actualizarTabla() {
@@ -50,8 +66,8 @@ localStorage.removeItem("productos");
         .then(data => {
             inventario = data;
 	  productos = data;
-            localStorage.setItem("productos", JSON.stringify(productos));
-	  localStorage.setItem("inventario", JSON.stringify(inventario));
+            localStorage.setItem("inventario",inventario);
+	  localStorage.setItem("productos",productos);
         })
         .catch(error => {
             console.error('Error al leer la base de datos:', error);
@@ -94,17 +110,11 @@ function quitarProducto(index) {
 };
 
 fetch(`/api/producto/${index}`, requestOptions)
-  .then(response => response.json())
-  .then(result => {a=result;
-		   console.log(a);
-		   	actualizarTabla();
-		
-    
-		  }
-	
-		   )
+  .then(response => response.text())
+  .then(result => console.log(result))
   .catch(error => console.log('error', error));
-window.location.replace("../inventario.html");	
+	actualizarTabla();
+	
 }//quitarProducto
 
 btnEnviar.addEventListener("click", e => {
@@ -157,11 +167,9 @@ btnEnviar.addEventListener("click", e => {
                 Producto agregado correctamente.
             </div>
         </div>`;
-
         actualizarTabla();
-		    
 	        }, 2000);
-window.location.replace("../inventario.html");
+
     }
     borderTimeout();
 
