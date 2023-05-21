@@ -9,6 +9,7 @@ const btnEnviar = document.getElementById("btn-enviar");
 let Tabla = document.getElementById("Inventario");
 let imgInfo;
 let inventario;
+let productos;
 let id = 0;
 let upload_widget = document.getElementById('upload_widget');
     
