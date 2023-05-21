@@ -34,47 +34,45 @@ upload_widget.addEventListener("click", function(){
 
 
 
-actualizarTabla();
-
-function actualizarTabla() {
-    while (Tabla.firstChild) {
-        Tabla.removeChild(Tabla.firstChild);
-    }
-	
-	
-	
-	
-	if (localStorage.getItem("productos") == null) {
-  fetch('/api/producto/',{method:'GET'})
+if (localStorage.getItem("productos") == null) {
+fetch('/api/producto/',{method:'GET'})
         .then(response => response.json())
         .then(data => {
             inventario = data;
-	  productos = data;
-	          localStorage.setItem("productos", JSON.stringify(productos));
-	          localStorage.setItem("inventario", JSON.stringify(inventario));
         })
         .catch(error => {
-            console.error('Error al leer la base de datos:', error);
+            console.error('Error al leer el archivo JSON:', error);
         });
-        
 
 } else {
 
     inventario = JSON.parse(localStorage.getItem("productos"));
 
 }
-	
-	
-	
-	
-	
-	
 
-//localStorage.removeItem("inventario");
-//localStorage.removeItem("productos");
+actualizarTabla();
+
+function actualizarTabla() {
+    while (Tabla.firstChild) {
+        Tabla.removeChild(Tabla.firstChild);
+    }
+
+localStorage.removeItem(inventario);
+localStorage.removeItem(inventario);
 
 
-
+  fetch('/api/producto/',{method:'GET'})
+        .then(response => response.json())
+        .then(data => {
+            inventario = data;
+	  productos = data;
+            localStorage.setItem("inventario",inventario);
+	  localStorage.setItem("productos",productos);
+        })
+        .catch(error => {
+            console.error('Error al leer la base de datos:', error);
+        });
+        
         
         
         
@@ -92,7 +90,7 @@ function actualizarTabla() {
                 </tr>        
         `;
         Tabla.insertAdjacentHTML("beforeend", html);
-
+        localStorage.setItem("productos", JSON.stringify(inventario));
     });
 }
 
@@ -170,7 +168,6 @@ btnEnviar.addEventListener("click", e => {
             </div>
         </div>`;
         actualizarTabla();
-		    window.location.replace("../inventario.html");
 	        }, 2000);
 
     }
@@ -232,7 +229,6 @@ fetch("/api/producto/", requestOptions)
             inventario = data;
             localStorage.getItem("inventario",inventario);
             actualizarTabla();
-	      window.location.replace("../inventario.html");
         })
         .catch(error => {
             console.error('Error al leer el archivo JSON:', error);
