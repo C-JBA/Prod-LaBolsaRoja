@@ -68,8 +68,8 @@ localStorage.removeItem("productos");
         .then(data => {
             inventario = data;
 	  productos = data;
-            localStorage.setItem("inventario",inventario);
-	  localStorage.setItem("productos",productos);
+            localStorage.setItem("productos", JSON.stringify(productos));
+	  localStorage.setItem("inventario", JSON.stringify(inventario));
         })
         .catch(error => {
             console.error('Error al leer la base de datos:', error);
