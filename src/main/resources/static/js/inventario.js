@@ -98,13 +98,13 @@ fetch(`/api/producto/${index}`, requestOptions)
   .then(result => {a=result;
 		   console.log(a);
 		   	actualizarTabla();
-		   location.reload(true);
+		
+    
 		  }
 	
 		   )
   .catch(error => console.log('error', error));
-
-	
+window.location.replace("../inventario.html");	
 }//quitarProducto
 
 btnEnviar.addEventListener("click", e => {
@@ -161,7 +161,7 @@ btnEnviar.addEventListener("click", e => {
         actualizarTabla();
 		    
 	        }, 2000);
-		    location.reload(true);
+window.location.replace("../inventario.html");
     }
     borderTimeout();
 
