@@ -34,45 +34,47 @@ upload_widget.addEventListener("click", function(){
 
 
 
-if (localStorage.getItem("productos") == null) {
-fetch('/api/producto/',{method:'GET'})
-        .then(response => response.json())
-        .then(data => {
-            inventario = data;
-        })
-        .catch(error => {
-            console.error('Error al leer el archivo JSON:', error);
-        });
-
-} else {
-
-    inventario = JSON.parse(localStorage.getItem("productos"));
-
-}
-
 actualizarTabla();
 
 function actualizarTabla() {
     while (Tabla.firstChild) {
         Tabla.removeChild(Tabla.firstChild);
     }
-
-localStorage.removeItem("inventario");
-localStorage.removeItem("productos");
-
-
+	
+	
+	
+	
+	if (localStorage.getItem("productos") == null) {
   fetch('/api/producto/',{method:'GET'})
         .then(response => response.json())
         .then(data => {
             inventario = data;
 	  productos = data;
-            localStorage.setItem("inventario",inventario);
-	  localStorage.setItem("productos",productos);
+	          localStorage.setItem("productos", JSON.stringify(productos));
+	          localStorage.setItem("inventario", JSON.stringify(inventario));
         })
         .catch(error => {
             console.error('Error al leer la base de datos:', error);
         });
         
+
+} else {
+
+    inventario = JSON.parse(localStorage.getItem("productos"));
+
+}
+	
+	
+	
+	
+	
+	
+
+//localStorage.removeItem("inventario");
+//localStorage.removeItem("productos");
+
+
+
         
         
         
@@ -90,7 +92,7 @@ localStorage.removeItem("productos");
                 </tr>        
         `;
         Tabla.insertAdjacentHTML("beforeend", html);
-        localStorage.setItem("productos", JSON.stringify(inventario));
+
     });
 }
 
