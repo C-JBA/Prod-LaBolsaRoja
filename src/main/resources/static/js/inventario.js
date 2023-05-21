@@ -40,6 +40,7 @@ fetch('/api/producto/',{method:'GET'})
         .then(response => response.json())
         .then(data => {
             inventario = data;
+	productos=data;
         })
         .catch(error => {
             console.error('Error al leer el archivo JSON:', error);
@@ -58,8 +59,8 @@ function actualizarTabla() {
         Tabla.removeChild(Tabla.firstChild);
     }
 
-localStorage.removeItem(inventario);
-localStorage.removeItem(productos);
+localStorage.removeItem("inventario");
+localStorage.removeItem("productos");
 
 
   fetch('/api/producto/',{method:'GET'})
