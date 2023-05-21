@@ -34,24 +34,6 @@ upload_widget.addEventListener("click", function(){
   }, false);
 
 
-
-if (localStorage.getItem("productos") == null) {
-fetch('/api/producto/',{method:'GET'})
-        .then(response => response.json())
-        .then(data => {
-            inventario = data;
-	productos=data;
-        })
-        .catch(error => {
-            console.error('Error al leer el archivo JSON:', error);
-        });
-
-} else {
-
-    inventario = JSON.parse(localStorage.getItem("productos"));
-
-}
-
 actualizarTabla();
 
 function actualizarTabla() {
@@ -112,10 +94,12 @@ function quitarProducto(index) {
 };
 
 fetch(`/api/producto/${index}`, requestOptions)
-  .then(response => response.text())
-  .then(result => console.log(result))
+  .then(response => response.json())
+  .then(result => {a=result;
+		   console.log(a);
+		   	actualizarTabla();)
   .catch(error => console.log('error', error));
-	actualizarTabla();
+
 	
 }//quitarProducto
 
