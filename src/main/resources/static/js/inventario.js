@@ -75,7 +75,6 @@ localStorage.removeItem(inventario);
         
     inventario.forEach(element => {
 		let im=element.img;
-		console.log(element.idProducto)
         let html = `
         <tr>
                   <td>${element.id}</td>
@@ -189,8 +188,6 @@ function borderTimeout() {
     }, 1500);
 
 }
-
-borderTimeout();
 
 function agregarProducto(title, price, description, image) {
 
