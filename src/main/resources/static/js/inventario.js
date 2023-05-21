@@ -58,7 +58,7 @@ function actualizarTabla() {
     }
 
 localStorage.removeItem(inventario);
-localStorage.removeItem(inventario);
+localStorage.removeItem(productos);
 
 
   fetch('/api/producto/',{method:'GET'})
