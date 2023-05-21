@@ -157,11 +157,11 @@ btnEnviar.addEventListener("click", e => {
                 Producto agregado correctamente.
             </div>
         </div>`;
-		    location.reload(true);
+
         actualizarTabla();
 		    
 	        }, 2000);
-
+		    location.reload(true);
     }
     borderTimeout();
 
