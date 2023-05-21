@@ -58,13 +58,16 @@ function actualizarTabla() {
     }
 
 localStorage.removeItem(inventario);
+localStorage.removeItem(inventario);
 
 
   fetch('/api/producto/',{method:'GET'})
         .then(response => response.json())
         .then(data => {
             inventario = data;
-            localStorage.getItem("inventario",inventario);
+	  productos = data;
+            localStorage.setItem("inventario",inventario);
+	  localStorage.setItem("productos",productos);
         })
         .catch(error => {
             console.error('Error al leer la base de datos:', error);
