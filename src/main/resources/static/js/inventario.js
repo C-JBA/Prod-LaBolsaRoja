@@ -65,7 +65,6 @@ localStorage.removeItem(inventario);
         .then(data => {
             inventario = data;
             localStorage.getItem("inventario",inventario);
-            actualizarTabla();
         })
         .catch(error => {
             console.error('Error al leer la base de datos:', error);
