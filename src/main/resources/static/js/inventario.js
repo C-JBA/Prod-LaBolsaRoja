@@ -34,6 +34,22 @@ upload_widget.addEventListener("click", function(){
 
 
 
+if (localStorage.getItem("productos") == null) {
+fetch('/api/producto/',{method:'GET'})
+        .then(response => response.json())
+        .then(data => {
+            inventario = data;
+        })
+        .catch(error => {
+            console.error('Error al leer el archivo JSON:', error);
+        });
+
+} else {
+
+    inventario = JSON.parse(localStorage.getItem("productos"));
+
+}
+
 actualizarTabla();
 
 function actualizarTabla() {
@@ -98,7 +114,6 @@ fetch(`/api/producto/${index}`, requestOptions)
   .then(result => console.log(result))
   .catch(error => console.log('error', error));
 	actualizarTabla();
-	    window.location.replace("../iniciarsesion.html");
 	
 }//quitarProducto
 
@@ -153,6 +168,7 @@ btnEnviar.addEventListener("click", e => {
             </div>
         </div>`;
         actualizarTabla();
+		    window.location.replace("../inventario.html");
 	        }, 2000);
 
     }
@@ -214,7 +230,7 @@ fetch("/api/producto/", requestOptions)
             inventario = data;
             localStorage.getItem("inventario",inventario);
             actualizarTabla();
-	      window.location.replace("../iniciarsesion.html");
+	      window.location.replace("../inventario.html");
         })
         .catch(error => {
             console.error('Error al leer el archivo JSON:', error);
